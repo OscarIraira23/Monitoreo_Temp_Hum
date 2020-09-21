@@ -1,0 +1,24 @@
+Bienvenido!
+Antes de poder ejecutar el código relacionado a la estación de monitoreo de temperatura y humedad, se debe tener encuenta la instalación de las siguientes librerias, pues 
+gracias a estas obtendremos un correcto funcionamiento de nuestro código. 
+
+Las librerias que el usuario debe tener en cuenta al momento de ejecutar este codigo en su computadora son las siguientes: 
+
+ 1- DHTlib
+ 2- SD
+ 3- RTClib
+ 4- LiquidCrystal_I2C
+ 
+ Importante siempre tener en cuenta que todas esta librerias pueden ser descargadas desde el mismo software de Arduino. 
+ Si no sabes como, aquí te explicamos brevemente: 
+ 
+ A. Primero debes acceder a la pestaña Programa.
+ B. Una vez hecho click en la pestaña debes seleccionar Incluir Libreria
+ C. Luego seleccionar Administrar Bibliotecas
+ 
+ Cuando se despliegue una ventana, podrás buscar las librerias que requieres usar, y listo! 
+ 
+ IMPORTANTE ! 
+ 
+ Seguramente en más de alguna ocación te preguntará si deseas instalar otras librerias, ante ese escenario, lo que debes realizar es aceptar, ya que así obtendras 
+ un mejor funcionamiento en general de las librerias. 
