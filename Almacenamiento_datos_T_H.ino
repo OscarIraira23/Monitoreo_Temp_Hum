@@ -36,6 +36,8 @@ float temperatura;
 
 void setup()
 {
+    dht.begin();
+
     lcd.init();
     lcd.backlight();
 
@@ -83,7 +85,6 @@ void setup()
     #if ECHO_TO_SERIAL
         Serial.println("fecha_hora, % humedad, temperatura °C");
     #endif
-        DHT.read22(DHTPIN);
 }
 
 void loop()
@@ -181,34 +182,34 @@ void loop()
   humedad = dht.readHumidity();
   temperatura = dht.readTemperature();
   
-  if(isnan(tc) || isnan(humedad))
+  if(isnan(temperatura) || isnan(humedad))
   {
       Serial.println("Fallo en la lectura de sensor DHT");
   }
   else{
 
-    logfile.print(",");
+    logfile.print(", ");
     logfile.print(humedad, 2);
     logfile.print(" %");
-    logfile.print(",");
+    logfile.print(", ");
     logfile.print(temperatura, 2);
 
   #if ECHO_TO_SERIAL
-      Serial.print(",");
+      Serial.print(", ");
       Serial.print(humedad, 2);
       Serial.print(" %");
       Serial.print(",");
-      Serial.print(tc, 2);
+      Serial.print(temperatura, 2);
   #endif //ECHO_TO_SERIAL
     }
   
     lcd.setCursor(0,0);
     lcd.print("Humedad : ");
-    lcd.print(humedad);
+    lcd.print(humedad,2);
     lcd.print("%");
     lcd.setCursor(0,1);
-    lcd.print("Temperatura: ");
-    lcd.print(temperatura);
+    lcd.print("Temp: ");
+    lcd.print(temperatura,2);
     lcd.print(" C");
     delay(1000);
 
@@ -221,4 +222,3 @@ void loop()
   logfile.flush();
 
 }
-
