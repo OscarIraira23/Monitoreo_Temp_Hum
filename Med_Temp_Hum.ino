@@ -22,10 +22,12 @@ void loop()
     float tc = DHT.temperature;
 
     Serial.print(",");
-    Serial.print(humedad, 2);
+    Serial.print("Humedad : ");
+    Serial.println(humedad, 2);
     Serial.print(" %");
     Serial.print(",");
-    Serial.print(tc, 2);
+    Serial.print("Temperatura ºC :");
+    Serial.println(tc, 2);
 
     mostrar_datos(humedad,tc);
 
